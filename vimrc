@@ -14,6 +14,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
@@ -49,7 +50,11 @@ set showcmd
 set lazyredraw
 
 " theme
-set laststatus=0
+if &term =~ '256color'
+  set t_Co=256
+  set t_ut=
+endif
+set laststatus=2
 colorscheme nord
 let g:lightline = {
 	\ 'colorscheme': 'nord'

@@ -48,35 +48,25 @@
 *.color15:        nord6
 
 !
-! xterm
+! rxvt-unicode
 !
 
 ! general
-XTerm*saveLine:           16384
-XTerm*termName:           xterm-256color
-XTerm*locale:             true
-XTerm*selectToClipboard:  true
-XTerm*metaSendsEscape:    true
+URxvt*saveLine:           16384
+URxvt*termName:           rxvt-256color
 
 ! appearance
-XTerm*scrollBar:          false
-XTerm*internalBorder:     25
-XTerm*cursorBlink:        1
+URxvt*scrollBar:          false
+URxvt*internalBorder:     25
+URxvt*cursorBlink:        1
 
 ! fonts
-XTerm*boldFont:           xft:UW Ttyp0:style=Bold:pixelsize=13
-XTerm*font:               xft:UW Ttyp0:style=Regular:pixelsize=13
+URxvt*boldFont:           -uw-ttyp0-bold-r-normal--13-120-75-75-c-70-iso8859-1
+!URxvt*boldFont:           xft:UW Ttyp0:style=Bold:pixelsize=13
+URxvt*font:               -uw-ttyp0-medium-r-normal--13-120-75-75-c-70-iso8859-1
+!URxvt*font:               xft:UW Ttyp0:style=Regular:pixelsize=13
 
-! copy paste
-Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
-
-!
-! xft
-!
-
-Xft.dpi:        100
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
+! links
+URxvt*perl-ext-common: default,selection,matcher
+URxvt*urlLauncher: /usr/bin/firefox
+URxvt*matcher.button: 1

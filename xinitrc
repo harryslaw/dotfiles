@@ -19,12 +19,12 @@ then
   xmodmap "${HOME}/.xmodmap"
 fi
 
-## basic starups
-pulseaudio --start &
-feh --no-fehbg --bg-fill ~/.wallpapers/692487.jpg
+## agents
+eval gpg-agent &
+eval ssh-agent &
 
 ## bspwm
 xsetroot -cursor_name left_ptr
+feh --no-fehbg --bg-scale ~/.wallpapers/686845.jpg
 sxhkd &
-"${HOME}/bin/sbar.sh" &
-exec "bspwm -c ${HOME}/.config/bspwm/bspwmrc"
+exec bspwm
