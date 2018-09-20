@@ -1,30 +1,29 @@
-#!/bin/sh
+#!/usr/bin/sh
 
-## set keymap
-setxkbmap gb
+[ -f $HOME/.Xresources ] && xrdb -load $HOME/.Xresources
+[ -f $HOME/.xmodmap ] && xmodmap $HOME/.xmodmap
 
-## no blank screen
+# Initialise malconfigured
+setxkbmap gb                # uk keymap
+xinput set-prop 11 282 1    # touch to click
+
+# no blank screen
 xset s off
 xset -dpms
 
-## load xresources
-if [ -f "${HOME}/.Xresources" ]
-then
-  xrdb -merge "${HOME}/.Xresources"
-fi
+# user fonts
+xset +fp $HOME/.fonts
+xset fp rehash
 
-## load xmodmap
-if [ -f "${HOME}/.xmodmap" ]
-then
-  xmodmap "${HOME}/.xmodmap"
-fi
+# daemonise agents
+gpg-agent &
+ssh-agent &
 
-## agents
-eval gpg-agent &
-eval ssh-agent &
+# startup programs
+feh --no-fehbg --bg-fill $HOME/.wallpapers/elcapitan.jpg
+redshift -r -l 51.51:0.13 &
 
-## bspwm
+# initialise display
 xsetroot -cursor_name left_ptr
-feh --no-fehbg --bg-scale ~/.wallpapers/686845.jpg
 sxhkd &
 exec bspwm
