@@ -151,8 +151,8 @@ bar_loop()
 }
 
 bar_loop < "$PANEL_FIFO" | lemonbar -p -n "$PANEL_NAME" -g "$PANEL_GEOM" \
-                                     -B "$PANEL_BACK" -F "$PANEL_FORE" \
-                                     -f "$PANEL_FONT" &
+                                    -B "$PANEL_BACK" -F "$PANEL_FORE" \
+                                    -f "$PANEL_FONT" | sh &
 
 wid=$(xdo id -m -a "$PANEL_NAME")
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
