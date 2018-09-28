@@ -13,9 +13,6 @@
 set -o notify
 set -o vi
 
-# prompt
-PS1='\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\][\u@\h]\[`tput sgr0`\] $PWD\n\$ '
-
 # keybindings
 bind -r "\C-l" && bind "\C-l":clear-screen
 bind -r "\C-e" && bind "\C-e":end-of-line

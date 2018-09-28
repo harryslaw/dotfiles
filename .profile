@@ -6,6 +6,10 @@ LANG=en_GB.UTF-8
 LC_ALL=C
 export LANGUAGE LANG LC_ALL
 
+# prompt
+PS1='\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\][\u@\h]\[`tput sgr0`\] $PWD\n\$ '
+export PS1
+
 # default program exports
 PAGER=less
 EDITOR=vi
