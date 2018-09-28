@@ -2,8 +2,8 @@
 
 if xdo id -a "$PANEL_NAME" > /dev/null
 then
-	printf "%s\n" "The panel is already running." >&2
-	exit 1
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
 fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT

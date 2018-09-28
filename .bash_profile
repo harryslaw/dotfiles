@@ -2,7 +2,7 @@
 
 # sources
 [[ -f "$HOME/.profile" ]] && . "$HOME/.profile"
-if [[ $- == *i* ]];  then
+if [[ $- == *i* ]] ; then
     [[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"
 fi
 
