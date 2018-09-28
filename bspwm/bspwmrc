@@ -18,10 +18,8 @@ bspc config click_to_focus      true
 bspc desktop '^1' -l monocle
 
 if [ -e "$PANEL_FIFO" ]
-:Q
 then
     bspc subscribe report > "$PANEL_FIFO" &
-    pgrep -x panel > /dev/null
 else
     panel &
 fi

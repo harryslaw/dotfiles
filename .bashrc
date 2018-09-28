@@ -9,6 +9,9 @@
 # colours
 [[ -r "$HOME/.colours" ]] && . "$HOME/.colours"
 
+# prompt
+PS1='\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\][\u@\h]\[`tput sgr0`\] $PWD\n\$ '
+
 # customise shell
 set -o notify
 set -o vi
