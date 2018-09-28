@@ -19,22 +19,33 @@ fi
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo -m 0600 "$PANEL_FIFO"
 
+sys_tray()
+{
+    while true
+    do
+        WHEN=$(when -f '%a %H:%M:%S %Y-%m-%d')
+        printf %s\\n "S$WHEN"
+        sleep 0.1
+    done
+}
+
 bspc subscribe report > "$PANEL_FIFO" &
 xtitle -sf 'T%s\n' > "$PANEL_FIFO" &
-when -i1 -sf 'S%a %H:%M %Y-%m-%d' > "$PANEL_FIFO" &
+sys_tray > "$PANEL_FIFO" &
 
-panel_bar() {
-    num_mon=$(bspc query -M | wc -l)
-
-    while read -r line ; do
-        case $line in
+bar_loop()
+{
+    num_mon=$( bspc query -M | wc -l; )
+    while read -r line
+    do
+        case "$line" in
             S*)
                 # sys output
-                sys="%{F$COLOR_SYS_FG}%{B$COLOR_SYS_BG} ${line#?} %{F- B-}"
+                sys="%{F$COLOR_SYS_FG} ${line#?} %{F-}"
                 ;;
             T*)
                 # xtitle output
-                title="%{F$COLOR_TITLE_FG}%{B$COLOR_TITLE_BG} ${line#?} %{B- F-}"
+                title="%{F$COLOR_TITLE_FG} ${line#?} %{F-}"
                 ;;
             W*)
                 # bspwm's state
@@ -50,7 +61,7 @@ panel_bar() {
                                 m*)
                                     # monitor
                                     FG=$COLOR_MONITOR_FG
-                                    BG=$COLOR_MONITOR_BG
+                                    BG=$PANEL_BACK
                                     on_focused_monitor=
                                     ;;
                                 M*)
@@ -68,7 +79,7 @@ panel_bar() {
                                 f*)
                                     # free desktop
                                     FG=$COLOR_FREE_FG
-                                    BG=$COLOR_FREE_BG
+                                    BG=$PANEL_BACK
                                     UL=$BG
                                     ;;
                                 F*)
@@ -87,7 +98,7 @@ panel_bar() {
                                 o*)
                                     # occupied desktop
                                     FG=$COLOR_OCCUPIED_FG
-                                    BG=$COLOR_OCCUPIED_BG
+                                    BG=$PANEL_BACK
                                     UL=$BG
                                     ;;
                                 O*)
@@ -127,20 +138,20 @@ panel_bar() {
                             ;;
                         [LTG]*)
                             # layout, state and flags
-                            wm="${wm}%{F$COLOR_STATE_FG}%{B$COLOR_STATE_BG} ${name} %{B- F-}"
+                            wm="${wm}%{F$COLOR_STATE_FG}%{B$PANEL_BACK} ${name} %{B- F-}"
                             ;;
                     esac
                     shift
                 done
                 ;;
         esac
-        printf "%s\n" "%{l}${wm}%{c}${title}%{r}${sys}"
+        printf %s\\n "%{l}$wm%{c}$title%{r}$sys"
     done
 }
 
-panel_bar < "$PANEL_FIFO" | lemonbar -n "$PANEL_NAME" -g "$PANEL_GEOM" \
-                                     -f "$PANEL_FONT" -F "$COLOR_FORE" \
-                                     -B "$COLOR_BACK" | sh &
+bar_loop < "$PANEL_FIFO" | lemonbar -p -n "$PANEL_NAME" -g "$PANEL_GEOM" \
+                                     -B "$PANEL_BACK" -F "$PANEL_FORE" \
+                                     -f "$PANEL_FONT" &
 
 wid=$(xdo id -m -a "$PANEL_NAME")
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
