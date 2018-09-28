@@ -41,18 +41,19 @@ bar_loop()
         case "$line" in
             S*)
                 # sys output
-                sys="%{F$COLOR_SYS_FG} ${line#?} %{F-}"
+                sys="%{F$PANEL_SYS_FG} ${line#?} %{F-}"
                 ;;
             T*)
                 # xtitle output
-                title="%{F$COLOR_TITLE_FG} ${line#?} %{F-}"
+                title="%{F$PANEL_TITLE_FG} ${line#?} %{F-}"
                 ;;
             W*)
                 # bspwm's state
                 wm=
                 IFS=':'
                 set -- ${line#?}
-                while [ $# -gt 0 ] ; do
+                while [ $# -gt 0 ]
+                do
                     item=$1
                     name=${item#?}
                     case $item in
@@ -60,14 +61,14 @@ bar_loop()
                             case $item in
                                 m*)
                                     # monitor
-                                    FG=$COLOR_MONITOR_FG
+                                    FG=$PANEL_MONITOR_FG
                                     BG=$PANEL_BACK
                                     on_focused_monitor=
                                     ;;
                                 M*)
                                     # focused monitor
-                                    FG=$COLOR_FOCUSED_MONITOR_FG
-                                    BG=$COLOR_FOCUSED_MONITOR_BG
+                                    FG=$PANEL_FOCUSED_MONITOR_FG
+                                    BG=$PANEL_FOCUSED_MONITOR_BG
                                     on_focused_monitor=1
                                     ;;
                             esac
@@ -78,59 +79,59 @@ bar_loop()
                             case $item in
                                 f*)
                                     # free desktop
-                                    FG=$COLOR_FREE_FG
+                                    FG=$PANEL_FREE_FG
                                     BG=$PANEL_BACK
                                     UL=$BG
                                     ;;
                                 F*)
                                     if [ "$on_focused_monitor" ] ; then
                                         # focused free desktop
-                                        FG=$COLOR_FOCUSED_FREE_FG
-                                        BG=$COLOR_FOCUSED_FREE_BG
+                                        FG=$PANEL_FOCUSED_FREE_FG
+                                        BG=$PANEL_FOCUSED_FREE_BG
                                         UL=$BG
                                     else
                                         # active free desktop
-                                        FG=$COLOR_FREE_FG
-                                        BG=$COLOR_FREE_BG
-                                        UL=$COLOR_FOCUSED_FREE_BG
+                                        FG=$PANEL_FREE_FG
+                                        BG=$PANEL_FREE_BG
+                                        UL=$PANEL_FOCUSED_FREE_BG
                                     fi
                                     ;;
                                 o*)
                                     # occupied desktop
-                                    FG=$COLOR_OCCUPIED_FG
+                                    FG=$PANEL_OCCUPIED_FG
                                     BG=$PANEL_BACK
                                     UL=$BG
                                     ;;
                                 O*)
                                     if [ "$on_focused_monitor" ] ; then
                                         # focused occupied desktop
-                                        FG=$COLOR_FOCUSED_OCCUPIED_FG
-                                        BG=$COLOR_FOCUSED_OCCUPIED_BG
+                                        FG=$PANEL_FOCUSED_OCCUPIED_FG
+                                        BG=$PANEL_FOCUSED_OCCUPIED_BG
                                         UL=$BG
                                     else
                                         # active occupied desktop
-                                        FG=$COLOR_OCCUPIED_FG
-                                        BG=$COLOR_OCCUPIED_BG
-                                        UL=$COLOR_FOCUSED_OCCUPIED_BG
+                                        FG=$PANEL_OCCUPIED_FG
+                                        BG=$PANEL_OCCUPIED_BG
+                                        UL=$PANEL_FOCUSED_OCCUPIED_BG
                                     fi
                                     ;;
                                 u*)
                                     # urgent desktop
-                                    FG=$COLOR_URGENT_FG
-                                    BG=$COLOR_URGENT_BG
+                                    FG=$PANEL_URGENT_FG
+                                    BG=$PANEL_URGENT_BG
                                     UL=$BG
                                     ;;
                                 U*)
                                     if [ "$on_focused_monitor" ] ; then
                                         # focused urgent desktop
-                                        FG=$COLOR_FOCUSED_URGENT_FG
-                                        BG=$COLOR_FOCUSED_URGENT_BG
+                                        FG=$PANEL_FOCUSED_URGENT_FG
+                                        BG=$PANEL_FOCUSED_URGENT_BG
                                         UL=$BG
                                     else
                                         # active urgent desktop
-                                        FG=$COLOR_URGENT_FG
-                                        BG=$COLOR_URGENT_BG
-                                        UL=$COLOR_FOCUSED_URGENT_BG
+                                        FG=$PANEL_URGENT_FG
+                                        BG=$PANEL_URGENT_BG
+                                        UL=$PANEL_FOCUSED_URGENT_BG
                                     fi
                                     ;;
                             esac
@@ -138,7 +139,7 @@ bar_loop()
                             ;;
                         [LTG]*)
                             # layout, state and flags
-                            wm="${wm}%{F$COLOR_STATE_FG}%{B$PANEL_BACK} ${name} %{B- F-}"
+                            wm="${wm}%{F$PANEL_STATE_FG}%{B$PANEL_BACK} ${name} %{B- F-}"
                             ;;
                     esac
                     shift
