@@ -1,0 +1,62 @@
+! colours based on nord colourscheme
+*.foreground:     #d8dee9
+*.background:     #111822
+*.cursorColour:   #d8dee9
+
+! black
+*.color0:         #3b4252
+*.color8:         #4c566a
+! red
+*.color1:         #bf616a
+*.color9:         #bf616a
+! green
+*.color2:         #a3be8c
+*.color10:        #a3be8c
+! yellow
+*.color3:         #ebcb8b
+*.color11:        #ebcb8b
+! blue
+*.color4:         #5e81ac
+*.color12:        #5e81ac
+! magenta
+*.color5:         #b48ead
+*.color13:        #b48ead
+! cyan
+*.color6:         #88c0d0
+*.color14:        #8fbcbb
+! white
+*.color7:         #e5e9f0
+*.color15:        #eceff4
+
+!
+! rxvt-unicode
+!
+
+! general
+URxvt*saveLine:           16384
+URxvt*termName:           rxvt-256color
+
+! appearance
+URxvt*scrollBar:          false
+URxvt*internalBorder:     25
+URxvt*cursorBlink:        1
+
+! fonts
+URxvt*boldFont:             xft: Dina:style=Bold:pixelsize=12:antialias=False
+URxvt*font:                 xft: Dina:style=Regular:pixelsize=12:antialias=False
+
+! links
+URxvt*matcher.button:       1
+URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt*launcher:             /usr/bin/firefox
+URxvt*underline:            true
+
+!
+! dmenu
+!
+
+dmenu.foreground:           #d8dee9
+dmenu.selforeground:        #3b4252
+dmenu.background:           #111822
+dmneu.selbackground:        #4c566a
+dmenu.font:                 "Dina:style=Regular:    +++ pixelsize=12:antialias=False"

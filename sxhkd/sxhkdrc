@@ -20,9 +20,7 @@ super + shift + x
 
 # dmenu
 super + d
-    dmenu_run
-super + shift + d
-    dmenu_run -b
+    dmenu_run -nb "#111822" -nf "#d8dee9" -fn "Dina:pixelsize=12" -sb "#4c566a" -x 10 -y 10 -w 1346 -lh 24
 
 # filemanager
 super + y
@@ -50,7 +48,7 @@ super + alt + Escape
 
 # reload bspwm
 super + alt + r
-    ${HOME}/.config/bspwm/bspwmrc
+    . $HOME/.config/bspwm/bspwmrc
 
 # close and kill
 super + {_,shift + }q
