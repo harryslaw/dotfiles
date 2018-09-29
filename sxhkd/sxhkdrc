@@ -23,9 +23,9 @@ super + d
     dmenu_run -nb "#111822" -nf "#d8dee9" -fn "Dina:pixelsize=12" -sb "#4c566a" -x 10 -y 10 -w 1346 -lh 24
 
 # filemanager
-super + y
+super + k
     urxvt -e ranger
-super + shift + y
+super + shift + k
     thunar
 
 # scrot
@@ -139,6 +139,10 @@ super + ctrl + shift + space
 # expand window by moving one of its sides
 super + alt + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# set gaps
+super + alt + g
+    ${HOME}/.config/bspwm/togglegaps.sh
 
 # contract window by moving one of its sides
 super + alt + shift + {h,j,k,l}
