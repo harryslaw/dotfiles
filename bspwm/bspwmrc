@@ -15,7 +15,16 @@ bspc config split_ratio         0.5
 bspc config gapless_monocle     false
 bspc config click_to_focus      true
 
+bspc desktop '^1' -l monocle
+
+bspc rule -a 'Firefox' state=tiled desktop='^1'
 bspc rule -a 'Thunar' state=floating
 bspc rule -a 'Xarchiver' state=floating
 
-panel &
+if [ -e "$PANEL_FIFO" ]
+then
+    bspc subscribe report > "$PANEL_FIFO" &
+    pgrep -x panel > /dev/null
+else
+    panel &
+fi
