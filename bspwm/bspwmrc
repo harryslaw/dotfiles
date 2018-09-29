@@ -20,10 +20,4 @@ bspc desktop '^1' -l monocle
 bspc rule -a 'Thunar' state=floating
 bspc rule -a 'Xarchiver' state=floating
 
-if [ -e "$PANEL_FIFO" ]
-then
-    bspc subscribe report > "$PANEL_FIFO" &
-    pgrep -x panel > /dev/null
-else
-    panel &
-fi
+panel &
