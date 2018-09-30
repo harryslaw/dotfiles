@@ -1,34 +1,30 @@
 filetype plugin indent on
 syntax on
 set nocompatible
-set nobackup
 set encoding=utf-8
-set history=56
+set history=128
 set hidden
-set scrolloff=3
 
 " plugins
 call plug#begin('~/.vim/plugged')
-
-Plug 'ap/vim-buftabline'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'itchyny/lightline.vim'
-
+Plug 'ap/vim-buftabline'
+Plug 'w0rp/ale'
 call plug#end()
+
+" colour
+if &term =~ '256color'
+    set t_Co=256
+    set t_ut=
+endif
+colorscheme desert
 
 " indent
 set autoindent
 set smartindent
 
 " line break
-set wrap
-set linebreak
-set breakindent
-let &showbreak = '+++ '
+set nowrap
 
 " backspace
 set backspace=indent,eol,start
@@ -46,7 +42,7 @@ set incsearch
 
 " ui
 set title
-set noruler
+set ruler
 set number
 set shortmess=atI
 set showcmd
@@ -58,34 +54,73 @@ set foldenable
 set foldmethod=marker
 set foldlevel=10
 
-" theme
-if &term =~ '256color'
-    set t_Co=256
-    set t_ut=
-endif
-set statusline=[\ %w%r%{getcwd()}/%t%m%y%=[line=%l/%L][col=%c][%p%%]\ ]
+" buftabline
+let g:buftabline_numbers = 1
+let g:buftabline_indicators = 'on'
+let g:buftabline_seperators = 'on'
+
+" lightline
 set laststatus=2
+let g:lightline = {
+            \ 'colorscheme': 'one',
+            \ 'active': {
+            \   'left': [
+            \            [ 'mode', 'paste' ],
+            \            [ 'readonly', 'filename', 'filetype', 'modified']
+            \           ],
+            \   'right': [
+            \             [ 'percent' ],
+            \             [ 'lineinfo' ],
+            \             [ 'char' ]
+            \            ],
+            \ },
+            \ 'component': {
+            \   'readonly': '%r',
+            \   'modified': '%m',
+            \   'filetype': '%y',
+            \   'filename': '%t',
+            \   'char': "0x%B"
+            \ },
+            \ 'inactive': {
+            \   'left': [
+            \            [ 'readonly', 'filename', 'filetype', 'modified']
+            \           ],
+            \ },
+            \ }
 
 " bindings
-nnoremap j gj
-nnoremap k gk
-noremap gV `[kv`]
-noremap gG :normal gg=G<CR>
-nnoremap jk <ESC>
-nnoremap kj    :let @/=""<CR>
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
-nnoremap <C-D> :bdelete<CR>
-vnoremap >     >`[v`]
-vnoremap <     <`[v`]
+map         <F1>    <nop>
+nnoremap    j       gj
+nnoremap    k       gk
+"" highlight everything
+noremap     gV      `[v`]
+"" format everything
+noremap     gG      :call s:formatScreen()<CR>
+"" clear hightlights
+nnoremap    kj      :let @/=""<CR>
+nnoremap    <C-N>   :bnext<CR>
+nnoremap    <C-P>   :bprev<CR>
+nnoremap    <C-D>   :bdelete<CR>
+"" syntax checker
+nnoremap    <C-F>   :ALEFix clang-format<CR>
+"" maintain highlight when shifting
+vnoremap    >       >`[v`]
+vnoremap    <       <`[v`]
+"" quick escape in instert
+inoremap    jk      <ESC>
 
-autocmd FileType c map ;m :w<Enter>:! sudo make install clean<Enter><Enter>
-autocmd FileType markdown map ;p :w<Enter>:!pandoc<space><C-r>%<space>-o<space><C-r>%.pdf<Enter><Enter>
+" functions
+function! s:formatScreen()
+    let cur_pos = getpos('.')
+    normal gg=G
+    call setpos('.', cur_pos)
+endfunction
 
 " autocmds
 augroup autos
     autocmd VimEnter * highlight clear SignColumn
     autocmd BufEnter * match ErrorMsg '\%>80v.\+'
+    autocmd BufEnter * :ALEEnable
     autocmd BufWritePre * :%s/\s\+$//e
-    autocmd BufWritePost $MYVIMRC :so $MYVIMRC
+    autocmd BufWritePost $MYVIMRC :source %s
 augroup END
