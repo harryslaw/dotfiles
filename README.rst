@@ -1,8 +1,8 @@
 ========
 dotfiles
 ========
-Harry S. Law (slaos) <harryslaw+dev AT pm DOT me> setup
--------------------------------------------------------
+Harry S. Law (slaos) setup
+--------------------------
 
 I currently am using Gentoo, because I hate myself and love to tinker.
 
