@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 Plug 'w0rp/ale'
+Plug 'rainglow/vim'
 call plug#end()
 
 " colour
@@ -17,7 +18,7 @@ if &term =~ '256color'
     set t_Co=256
     set t_ut=
 endif
-colorscheme desert
+colorscheme heroku
 
 " indent
 set autoindent
@@ -42,12 +43,11 @@ set incsearch
 
 " ui
 set title
-set ruler
+set noruler
 set number
 set shortmess=atI
 set showcmd
 set wildmenu
-set lazyredraw
 
 " folding
 set foldenable
@@ -62,7 +62,7 @@ let g:buftabline_seperators = 'on'
 " lightline
 set laststatus=2
 let g:lightline = {
-            \ 'colorscheme': 'one',
+            \ 'colorscheme': 'seoul256',
             \ 'active': {
             \   'left': [
             \            [ 'mode', 'paste' ],
@@ -95,7 +95,7 @@ nnoremap    k       gk
 "" highlight everything
 noremap     gV      `[v`]
 "" format everything
-noremap     gG      :call s:formatScreen()<CR>
+noremap     gG      :call <SID>formatScreen()<CR>
 "" clear hightlights
 nnoremap    kj      :let @/=""<CR>
 nnoremap    <C-N>   :bnext<CR>
@@ -110,7 +110,7 @@ vnoremap    <       <`[v`]
 inoremap    jk      <ESC>
 
 " functions
-function! s:formatScreen()
+function! <SID>formatScreen()
     let cur_pos = getpos('.')
     normal gg=G
     call setpos('.', cur_pos)
@@ -122,5 +122,5 @@ augroup autos
     autocmd BufEnter * match ErrorMsg '\%>80v.\+'
     autocmd BufEnter * :ALEEnable
     autocmd BufWritePre * :%s/\s\+$//e
-    autocmd BufWritePost $MYVIMRC :source %s
+    autocmd BufWritePost $MYVIMRC :source %
 augroup END
