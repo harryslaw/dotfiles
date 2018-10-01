@@ -1,0 +1,9 @@
+[Match]
+Name=enp2s0
+Virtualization=no
+
+[Network]
+DHCP=ipv4
+
+[DHCP]
+RouteMetric=10
