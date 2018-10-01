@@ -1,7 +1,28 @@
 #!/bin/tcsh -f
 
+# mask `rwxr-xr-x'
+umask 022
+
+# blocksize units
+setenv BLOCKSIZE        M
+
+# config file home
+setenv XDG_CONFIG_HOME  "$HOME/.config"
+
+# locale
+setenv LANG             en_GB.UTF-8
+setenv LC_CTYPE         C.UTF-8
+setenv TZ               Europe/London
+
+# panel exports
+setenv PANEL_FIFO       /tmp/lemonbar-panel.fifo
+setenv PANEL_GEOM	    1348x24+10+10
+setenv PANEL_FORE	    '#d8dee9'
+setenv PANEL_BACK	    '#111822'
+setenv PANEL_FONT	    Dina:pixelsize=12
+
 # user exports
-setenv PAGER            more
+setenv PAGER            less
 setenv EDITOR           vi
 setenv VISUAL           vim
 setenv COLUMNS          78
@@ -20,7 +41,7 @@ if ( $?prompt ) then
     set ignoreeof = 2
     set notify
     set prompt = '[%B%n@%M%b] %B%?%b %U%/%u\n[%U%h%u] %# '
-    set savehist
+    set savehist = 4096
     set status
 
     if ( $?tcsh ) then
@@ -29,12 +50,13 @@ if ( $?prompt ) then
         set echo_style = bsd
         set fignore = ( ~ .bak .old .o )
         set histdup = prev
+        set histfile = "$HOME/.history"
         set listflags = xa
         set listjobs = long
         set listlinks
-        set nokanji
         set printexitvalue
         set promptchars = '$#'
+        set savehist = ( 4096 merge )
 
         bindkey "^W" backward-delete-word
         bindkey -k up history-search-backward

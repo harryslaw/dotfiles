@@ -23,9 +23,10 @@ sys_tray()
 {
     while true
     do
-        WHEN=$(when -f '%a %H:%M:%S %Y-%m-%d')
-        printf %s\\n "S$WHEN"
-        sleep 0.1
+        WHEN=$(when -f '%a %H:%M %Y-%m-%d')
+        BAT=$(charge -f '%s %i%%')
+        printf %s\\n "S$BAT | $WHEN"
+        sleep 0.5
     done
 }
 

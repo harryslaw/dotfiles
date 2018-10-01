@@ -60,10 +60,6 @@ super + m
 super + y
     bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
 
-# swap current node and biggest node
-# super + g
-#   bspc node -s biggest
-
 #
 # state / flags
 #
