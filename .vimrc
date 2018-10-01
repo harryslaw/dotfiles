@@ -1,3 +1,4 @@
+" general
 filetype plugin indent on
 syntax on
 set nocompatible
@@ -30,6 +31,7 @@ set smartindent
 
 " line break
 set nowrap
+set textwidth=78
 
 " backspace
 set backspace=indent,eol,start
