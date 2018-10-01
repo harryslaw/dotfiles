@@ -1,8 +1,8 @@
 ========
 dotfiles
 ========
-
-This is my workstation setup.
+Harry S. Law (slaos) <harryslaw+dev AT pm DOT me> setup
+-------------------------------------------------------
 
 I currently am using Gentoo, because I hate myself and love to tinker.
 
@@ -74,6 +74,6 @@ Packages
 .. _screenfetch: https://github.com/KittyKatt/screenFetch
 .. _dina-font: http://www.dcmembers.com/jibsen/download/61
 .. _xdo: https://github.com/baskerville/xdo
-.. _xtitle: https://github.com/baskerville/xtitle 
+.. _xtitle: https://github.com/baskerville/xtitle
 .. _dmenu2: https://bitbucket.org/melek/dmenu2
 .. _lemonbar-xft: https://github.com/krypt-n/bar
