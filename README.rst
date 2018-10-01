@@ -33,6 +33,8 @@ Packages::
 * lemonbar-xft
 * dmenu2
 
+* xsel
+* tree
 * screenfetch / neofetch
 * scrot
 * rxvt-unicode
@@ -41,14 +43,20 @@ Packages::
 * ffmpeg
 * pulseaudio
 * pulseaudio-alsa
+* firefox
+* libreoffice-fresh-uk
 * feh
+
 * ranger
 * w3m
 * ffmpegthumbnailer
 * highlight
-* firefox
-* xsel
-* tree
+* elinks
+* poppler
+* atool
+* libcaca
+* odt2txt
+
 * tlp
 * smartmontools
 * lsb-release
