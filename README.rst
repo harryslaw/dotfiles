@@ -34,6 +34,7 @@ Packages
       * bspwm
       * sxhkd
       * xdo_
+      * xtitle_
       * lemonbar-xft_
       * dmenu2_
 
@@ -73,5 +74,6 @@ Packages
 .. _screenfetch: https://github.com/KittyKatt/screenFetch
 .. _dina-font: http://www.dcmembers.com/jibsen/download/61
 .. _xdo: https://github.com/baskerville/xdo
+.. _xtitle: https://github.com/baskerville/xtitle 
 .. _dmenu2: https://bitbucket.org/melek/dmenu2
 .. _lemonbar-xft: https://github.com/krypt-n/bar
