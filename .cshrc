@@ -12,6 +12,7 @@ setenv XDG_CONFIG_HOME  "$HOME/.config"
 # locale
 setenv LANG             en_GB.UTF-8
 setenv LC_CTYPE         C.UTF-8
+setenv LC_ALL           C
 setenv TZ               Europe/London
 
 # panel exports
