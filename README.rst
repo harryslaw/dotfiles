@@ -45,6 +45,7 @@ Packages
       * rxvt-unicode
       * urxvt-perls
       * dina-font_
+      * ttf-liberation
       * ffmpeg
       * pulseaudio
       * pulseaudio-alsa
@@ -71,7 +72,7 @@ Packages
 
 .. _screenfetch: https://github.com/KittyKatt/screenFetch
 .. _dina-font: http://www.dcmembers.com/jibsen/download/61
-.. _xdo: https://github.com/baskerville/xdo
+.. _xdo: https://github.com/baskerville/xdo07534 912463
 .. _xtitle: https://github.com/baskerville/xtitle
 .. _dmenu2: https://bitbucket.org/melek/dmenu2
 .. _lemonbar-xft: https://github.com/krypt-n/bar
