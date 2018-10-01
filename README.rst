@@ -9,7 +9,7 @@ Packages
 
 (Package names may vary OS-to-OS)
 
-System::
+:System:
       * intel-ucode
       * llvm
       * clang
@@ -24,7 +24,7 @@ System::
       * wpa_supplicant
 
 
-X::
+:X:
       * xorg-server
       * xorg-xinit
       * @xorg-apps
@@ -35,10 +35,10 @@ X::
       * dmenu2_
 
 
-General::
+:General:
       * xsel
       * tree
-      * screenfetch / neofetch
+      * screenfetch_
       * scrot
       * rxvt-unicode
       * urxvt-perls
@@ -51,7 +51,7 @@ General::
       * feh
 
 
-Ranger::
+:Ranger:
       * ranger
       * w3m
       * ffmpegthumbnailer
@@ -62,11 +62,12 @@ Ranger::
       * libcaca
       * odt2txt
 
-TLP::
+:TLP:
       * tlp
       * smartmontools
       * lsb-release
 
+.. _screenfetch: https://github.com/KittyKatt/screenFetch
 .. _xdo: https://github.com/baskerville/xdo
 .. _dmenu2: https://bitbucket.org/melek/dmenu2
 .. _lemonbar-xft: https://github.com/krypt-n/bar
