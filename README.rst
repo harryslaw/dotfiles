@@ -9,16 +9,16 @@ This is just a simple sxhkd, bspwm, lemonbar-xft setup.
 Essential packages
 ------------------
 
+- xorg-server
+- xorg-xinit
+- @xorg-apps
 - bspwm
-- sxhkd
-- lemonbar-xft
-- dina-font
-- dmenu2
 - rxvt-unicode
+- sxhkd
+- dina-font
+- lemonbar-xft
+- dmenu2
 - pulseaudio
 - feh
 - ranger
 - firefox
-- xorg-server
-- xorg-xinit
-- @xorg-apps@
