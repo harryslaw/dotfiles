@@ -5,12 +5,17 @@ set encoding=utf-8
 set history=128
 set hidden
 
+" backups
+set backupdir=/tmp/vim/backups
+set directory=/tmp/vim/backups
+set writebackup
+set backup
+
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 Plug 'w0rp/ale'
-Plug 'rainglow/vim'
 call plug#end()
 
 " colour
@@ -18,7 +23,6 @@ if &term =~ '256color'
     set t_Co=256
     set t_ut=
 endif
-colorscheme heroku
 
 " indent
 set autoindent
