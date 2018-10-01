@@ -6,8 +6,8 @@ set history=128
 set hidden
 
 " backups
-set backupdir=/tmp/vim/backups
-set directory=/tmp/vim/backups
+set backupdir=/tmp/vim_backups
+set directory=/tmp/vim_backups
 set writebackup
 set backup
 
