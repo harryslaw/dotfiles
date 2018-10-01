@@ -6,7 +6,7 @@ Config for a fairly simple bspwm setup
 
 This is my workstation setup.
 
-Packages::
+Packages
 --------
 
 (Package names may vary OS-to-OS)
