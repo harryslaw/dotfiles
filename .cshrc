@@ -1,34 +1,34 @@
-#!/bin/tcsh -f
+#!/ bin / tcsh - f
 
-# mask `rwxr-xr-x'
+#mask `rwxr - xr - x'
 umask 022
 
-# blocksize units
+#blocksize units
 setenv BLOCKSIZE        M
 
-# config file home
+#config file home
 setenv XDG_CONFIG_HOME  "$HOME/.config"
 
-# locale
+#locale
 setenv LANG             en_GB.UTF-8
 setenv LC_CTYPE         C.UTF-8
 setenv TZ               Europe/London
 
-# panel exports
+#panel exports
 setenv PANEL_FIFO       /tmp/lemonbar-panel.fifo
 setenv PANEL_GEOM	    1348x24+10+10
 setenv PANEL_FORE	    '#d8dee9'
 setenv PANEL_BACK	    '#111822'
 setenv PANEL_FONT	    Dina:pixelsize=12
 
-# user exports
+#user exports
 setenv PAGER            zless
 setenv EDITOR           vi
 setenv VISUAL           vim
 setenv COLUMNS          78
 setenv GPG_TTY          `tty`
 
-# aliases
+#aliases
 alias ls        ls-F --group-directories-first
 alias grep      /usr/bin/grep --color
 alias tree      /usr/bin/tree -aCF --dirsfirst
