@@ -27,6 +27,7 @@ setenv PAGER            zless
 setenv EDITOR           vi
 setenv VISUAL           vim
 setenv COLUMNS          78
+setenv GPG_TTY          `tty`
 
 # aliases
 alias ls        ls-F --group-directories-first
