@@ -4,7 +4,7 @@ My dotfiles
 Config for a fairly simple bspwm setup
 --------------------------------------
 
-This is just a simple sxhkd, bspwm, lemonbar-xft-git setup for my Arch machine.
+This is just a simple sxhkd, bspwm, lemonbar-xft setup.
 
 Essential packages
 ------------------
@@ -16,4 +16,4 @@ Essential packages
 - dmenu2
 - rxvt-unicode
 - ranger
-- thunar
+- firefox
