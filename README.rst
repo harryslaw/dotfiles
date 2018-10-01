@@ -4,7 +4,7 @@ dotfiles
 Harry S. Law (slaos) setup
 --------------------------
 
-I currently am using Gentoo, because I hate myself and love to tinker.
+I currently am using Arch Linux , because I hate myself and love to tinker.
 
 Packages
 --------
