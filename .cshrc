@@ -12,7 +12,6 @@ setenv XDG_CONFIG_HOME  "$HOME/.config"
 # locale
 setenv LANG             en_GB.UTF-8
 setenv LC_CTYPE         C.UTF-8
-setenv LC_ALL           C
 setenv TZ               Europe/London
 
 # panel exports
@@ -33,6 +32,7 @@ setenv GPG_TTY          `tty`
 alias ls        ls-F --group-directories-first
 alias grep      /usr/bin/grep --color
 alias tree      /usr/bin/tree -aCF --dirsfirst
+alias diff      /usr/bin/diff --color
 ## verbose
 alias cp        /usr/bin/cp -vp
 alias rm        /usr/bin/rm -v
@@ -53,9 +53,8 @@ if ( $?prompt ) then
 
     if ( $?tcsh ) then
         set autolist = ambiguous
-        set complete = enhance
-        set echo_style = bsd
-        set fignore = ( ~ .bak .old .o )
+        set complete
+        set fignore = ( ~ .o )
         set histdup = prev
         set histfile = "$HOME/.history"
         set listflags = xa
