@@ -15,5 +15,10 @@ Essential packages
 - dina-font
 - dmenu2
 - rxvt-unicode
+- pulseaudio
+- feh
 - ranger
 - firefox
+- xorg-server
+- xorg-xinit
+- @xorg-apps@
