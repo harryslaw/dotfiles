@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh -
 
 [ -f $HOME/.Xresources ] && xrdb -load $HOME/.Xresources
 [ -f $HOME/.xmodmap ] && xmodmap $HOME/.xmodmap
@@ -23,6 +23,7 @@ gpg-agent &
 ssh-agent &
 
 # startup programs
+pulseaudio --start &
 feh --no-fehbg --bg-fill $HOME/.wallpapers/elcapitan.jpg
 
 # initialise display
