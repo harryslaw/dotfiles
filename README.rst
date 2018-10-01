@@ -12,7 +12,8 @@ Packages
 (Package names may vary OS-to-OS)
 
 :System:
-      * intel-ucode
+      * intel-microcode
+      * iucode_tool
       * llvm
       * clang
       * tcsh
