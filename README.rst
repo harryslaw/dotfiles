@@ -11,9 +11,9 @@ Essential packages
 
 - bspwm
 - sxhkd
-- lemonbar-xft-git
+- lemonbar-xft
 - dina-font
-- dmenu-xyz-mouse-msel
+- dmenu2
 - rxvt-unicode
 - ranger
 - thunar
