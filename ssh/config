@@ -1,2 +1,15 @@
+# ssh_config
+AddKeysToAgent yes
+Compression yes
+ConnectionAttempts 5
+ConnectTimeout 300
+EscapeChar '{e'
+HashKnownHosts yes
+HostbasedAuthentication yes
+IdentitiesOnly
+LogLevel VERBOSE
+UpdateHostKeys yes
+
+# hosts
 Host github.com
-    IdentityFile ~/.ssh/git.key
+    IdentityFile "$HOME/.ssh/git.key"

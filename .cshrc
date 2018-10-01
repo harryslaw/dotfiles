@@ -32,6 +32,11 @@ setenv COLUMNS          78
 alias ls        ls-F --group-directories-first
 alias grep      /usr/bin/grep --color
 alias tree      /usr/bin/tree -aCF --dirsfirst
+## verbose
+alias cp        /usr/bin/cp -vp
+alias rm        /usr/bin/rm -v
+alias mv        /usr/bin/mv -v
+alias ln        /usr/bin/ln -v
 
 if ( $?prompt ) then
     set color

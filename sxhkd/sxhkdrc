@@ -23,7 +23,7 @@ super + d
     dmenu_run -fn "Dina:pixelsize=12" -x 10 -y 10 -h 24 -w 1346 -nb "#111822" -nf "#d8dee9" -sb "#4c566a" -sf "#d8dee9"
 
 # filemanager
-super + k
+super + y
     urxvt -e ranger
 
 # scrot
