@@ -4,6 +4,8 @@ dotfiles
 
 This is my workstation setup.
 
+I currently am using Gentoo, because I hate myself and love to tinker.
+
 Packages
 --------
 
