@@ -1,4 +1,8 @@
 [user]
-	name = Harry S. Law
-	email = harryslaw+dev@pm.me
-	signingkey = 4718B9A3
+	name = "Harry S. Law"
+	email = "harryslaw+dev@pm.me"
+	signingkey = "79407AD1B747B345F2A5772AEF82F5864718B9A3"
+[gpg]
+	program = "gpg2"
+[commit]
+	gpgsign = true

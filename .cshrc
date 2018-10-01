@@ -23,7 +23,7 @@ setenv PANEL_BACK	    '#111822'
 setenv PANEL_FONT	    Dina:pixelsize=12
 
 # user exports
-setenv PAGER            less
+setenv PAGER            zless
 setenv EDITOR           vi
 setenv VISUAL           vim
 setenv COLUMNS          78

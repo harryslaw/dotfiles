@@ -3,13 +3,11 @@ AddKeysToAgent yes
 Compression yes
 ConnectionAttempts 5
 ConnectTimeout 300
-EscapeChar '{e'
 HashKnownHosts yes
 HostbasedAuthentication yes
-IdentitiesOnly
 LogLevel VERBOSE
 UpdateHostKeys yes
 
 # hosts
 Host github.com
-    IdentityFile "$HOME/.ssh/git.key"
+    IdentityFile "~/.ssh/git.key"
