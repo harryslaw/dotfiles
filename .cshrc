@@ -16,10 +16,10 @@ setenv TZ               Europe/London
 
 #panel exports
 setenv PANEL_FIFO       /tmp/lemonbar-panel.fifo
-setenv PANEL_GEOM	    1348x24+10+10
-setenv PANEL_FORE	    '#d8dee9'
-setenv PANEL_BACK	    '#111822'
-setenv PANEL_FONT	    Dina:pixelsize=12
+setenv PANEL_GEOM       1348x24+10+10
+setenv PANEL_FORE       '#d8dee9'
+setenv PANEL_BACK       '#111822'
+setenv PANEL_FONT       Dina:pixelsize=12
 
 #user exports
 setenv PAGER            zless
