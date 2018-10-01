@@ -50,13 +50,3 @@ URxvt*matcher.button:       1
 URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select
 URxvt*launcher:             /usr/bin/firefox
 URxvt*underline:            true
-
-!
-! dmenu
-!
-
-dmenu.foreground:           #d8dee9
-dmenu.selforeground:        #3b4252
-dmenu.background:           #111822
-dmneu.selbackground:        #4c566a
-dmenu.font:                 "Dina:style=Regular:    +++ pixelsize=12:antialias=False"
