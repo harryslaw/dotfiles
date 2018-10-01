@@ -42,7 +42,7 @@ Packages
       * scrot
       * rxvt-unicode
       * urxvt-perls
-      * dina-font
+      * dina-font_
       * ffmpeg
       * pulseaudio
       * pulseaudio-alsa
@@ -68,6 +68,7 @@ Packages
       * lsb-release
 
 .. _screenfetch: https://github.com/KittyKatt/screenFetch
+.. _dina-font: http://www.dcmembers.com/jibsen/download/61
 .. _xdo: https://github.com/baskerville/xdo
 .. _dmenu2: https://bitbucket.org/melek/dmenu2
 .. _lemonbar-xft: https://github.com/krypt-n/bar
