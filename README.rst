@@ -12,17 +12,15 @@ Packages
 (Package names may vary OS-to-OS)
 
 :System:
-      * intel-microcode
-      * iucode_tool
-      * llvm
-      * clang
+      * intel-ucode
+      * gcc
       * tcsh
       * vim
       * git
       * libinput
       * openssh
       * gnupg
-      * gptfdisk
+      * parted
       * lvm2
       * wpa_supplicant
 
@@ -51,6 +49,7 @@ Packages
       * pulseaudio
       * pulseaudio-alsa
       * firefox
+      * elinks
       * libreoffice-fresh-uk
       * feh
 
@@ -60,7 +59,6 @@ Packages
       * w3m
       * ffmpegthumbnailer
       * highlight
-      * elinks
       * poppler
       * atool
       * libcaca
