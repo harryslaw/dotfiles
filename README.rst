@@ -53,6 +53,9 @@ Packages
       * elinks
       * libreoffice-fresh-uk
       * feh
+      * unrar
+      * zip
+      * unzip
 
 
 :Ranger:
